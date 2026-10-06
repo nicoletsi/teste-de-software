@@ -1,0 +1,23 @@
+{
+  "name": "hotel-guest-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Aplicação para cadastrar hóspedes de um hotel",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest --runInBand",
+    "test:e2e": "cypress run"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "cypress": "^14.0.0",
+    "jest": "^30.0.0",
+    "supertest": "^7.1.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

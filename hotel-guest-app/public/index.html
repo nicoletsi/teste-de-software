@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cadastre hóspedes e reservas do hotel">
+  <title>Hotel Guest App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="page-shell">
+    <section class="hero">
+      <p class="eyebrow">Sua viagem começa aqui</p>
+      <h1>Hotel Guest<br><span>App</span></h1>
+      <p class="hero-copy">Cadastre seu perfil e finalize a reserva com informações completas e seguras.</p>
+      <div class="hero-stat">
+        <strong>24/7</strong>
+        <span>Atendimento exclusivo</span>
+      </div>
+    </section>
+
+    <section class="registration-card" aria-labelledby="registration-title">
+      <div class="card-heading">
+        <span class="step">01</span>
+        <div>
+          <p class="eyebrow">Cadastro rápido</p>
+          <h2 id="registration-title">Registro de hóspede</h2>
+        </div>
+      </div>
+
+      <form id="guest-form" novalidate>
+        <div class="field-grid">
+          <label class="field full-width">
+            <span>Nome completo</span>
+            <input id="name" data-cy="name" name="name" type="text" placeholder="Ex.: Ana Silva" autocomplete="name" required>
+            <small class="error" id="name-error"></small>
+          </label>
+
+          <label class="field">
+            <span>E-mail</span>
+            <input id="email" data-cy="email" name="email" type="email" placeholder="ana@email.com" autocomplete="email" required>
+            <small class="error" id="email-error"></small>
+          </label>
+
+          <label class="field">
+            <span>Telefone</span>
+            <input id="phone" data-cy="phone" name="phone" type="tel" placeholder="+55 11 98765-4321" autocomplete="tel" required>
+            <small class="error" id="phone-error"></small>
+          </label>
+
+          <label class="field">
+            <span>Data Check-in</span>
+            <input id="checkIn" data-cy="check-in" name="checkIn" type="date" required>
+            <small class="error" id="checkIn-error"></small>
+          </label>
+
+          <label class="field">
+            <span>Data Check-out</span>
+            <input id="checkOut" data-cy="check-out" name="checkOut" type="date" required>
+            <small class="error" id="checkOut-error"></small>
+          </label>
+
+          <label class="field">
+            <span>Número de hóspedes</span>
+            <select id="guests" data-cy="guests" name="guests" required>
+              <option value="">Selecione</option>
+              <option value="0">0 hóspedes</option>
+              <option value="1">1 hóspede</option>
+              <option value="2">2 hóspedes</option>
+              <option value="3">3 hóspedes</option>
+              <option value="4">4 hóspedes</option>
+              <option value="5">5 hóspedes</option>
+              <option value="6">6 hóspedes</option>
+            </select>
+            <small class="error" id="guests-error"></small>
+          </label>
+        </div>
+
+        <button id="register" data-cy="submit" class="submit-button" type="submit">
+          Register Guest
+          <span aria-hidden="true">→</span>
+        </button>
+        <p id="status-message" class="status-message" role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="guest-list" aria-label="Hóspedes cadastrados">
+        <div class="list-heading">
+          <h3>Hóspedes recentes</h3>
+          <span id="guest-count">0</span>
+        </div>
+        <div id="guest-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/app.js" type="module"></script>
+</body>
+</html>
